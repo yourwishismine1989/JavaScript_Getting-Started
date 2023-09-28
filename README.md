@@ -49,11 +49,22 @@ A quick how to with your first application example
             close VSCode window
  
 ## __hello-world__ (tested on Ubuntu 22.04 on 09/26/2023)
-    /usr/bin/pwsh
-    touch hello-world.ps1
-    nano ./hello-world.ps1
-    [String]$message = "Hello World"
-    Write-Host -BackgroundColor $bgClr -ForegroundColor $fgClr "$message"
+**__hello-world__** (tested on Ubuntu 22.04 on 09/26/2023)
+    mkdir hello-world
+    cd ./hello-world/
+    npm init --yes
+    touch index.js
+    nano ./index.js
+    const readline = require("readline");
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    
+    rl.question("What is your name ? ", (name) => {
+            console.log(`Hello, ${name}`);
+            rl.close();
+    });
     CTRL-o -> ENTER
     CTRL-x
-    ./hello-world.ps1
+    node ./index.js
